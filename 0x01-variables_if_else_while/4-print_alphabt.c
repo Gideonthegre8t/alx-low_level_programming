@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 /**
-*main - Program to print alphabet letters in all cases followed by new line
+*main - Program to print alphabet letters except q and e followed by new line
 *
 *Return: return 0
 */
@@ -11,18 +11,11 @@ int main(void)
 
 	for (letter = 'a'; letter <= 'z'; letter++)
 	{
-		letter = tolower(letter);
-		putchar(letter);
-		if (letter == 'z')
+		if (letter == 'q' || letter == 'e')
 		{
-			letter = 'A';
-			for (; letter <= 'Z'; letter++)
-			{
-				putchar(letter);
-			}
-			break;
+			continue;
 		}
+		putchar(letter);
 	}
 	putchar('\n');
 	return (0);
-}
